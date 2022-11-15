@@ -1,0 +1,10 @@
+add-discovered-sources: true
+add-discovered-converters: true
+add-default-sources: true
+
+sources:
+  - type: "yaml"
+    classpath: "application.yaml"
+  - type: "yaml"
+    classpath: "application-${profile}.yaml"
+    optional: true
