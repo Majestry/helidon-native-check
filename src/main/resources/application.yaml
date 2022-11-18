@@ -1,22 +1,19 @@
 rmq:
-  host: localhost
-  user: guest
+  host: amqp://localhost:5672
+  username: guest
   password: guest
 
 mp:
   messaging:
     connector:
       helidon-jms:
-        named-factory: rabbitmq
-    incoming.from-jms:
-      connector: helidon-jms
-      destination: TESTQUEUESEND
-      type: queue
-    outgoing.to-jms:
-      connector: helidon-jms
-      destination: TESTQUEUESEND
-      type: topic
-    incoming.rabbit:
+        named-factory: activemq
+    outgoing.emit-it:
       connector: helidon-jms
       destination: SomeQueue
       type: queue
+    incoming.from-jms:
+      connector: helidon-jms
+      destination: SomeQueue
+      type: queue
+
