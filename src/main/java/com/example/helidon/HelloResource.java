@@ -1,4 +1,4 @@
-package com.example.helidon1;
+package com.example.helidon;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;

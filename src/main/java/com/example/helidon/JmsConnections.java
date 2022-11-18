@@ -1,4 +1,4 @@
-package com.example.helidon1;
+package com.example.helidon;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
