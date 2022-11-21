@@ -1,3 +1,5 @@
+server:
+  port: 45678
 #rmq:
 #  host: amqp://localhost:5672
 #  username: guest
