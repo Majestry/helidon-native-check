@@ -1,0 +1,15 @@
+tracing:
+  paths:
+    - path: "/favicon.ico"
+      enabled: false
+    - path: "/metrics"
+      enabled: false
+    - path: "/health"
+      enabled: false
+  components:
+    web-server:
+      spans:
+        - name: "HTTP Request"
+          logs:
+            - name: "content-write"
+              enabled: true

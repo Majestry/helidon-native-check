@@ -7,3 +7,5 @@ sources:
     classpath: "application.yaml"
   - type: "yaml"
     classpath: "mqtt-config.yaml"
+  - type: "yaml"
+    classpath: "tracing.yaml"

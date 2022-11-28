@@ -5,18 +5,24 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
+import org.eclipse.microprofile.metrics.annotation.Timed;
+
+import java.util.Map;
 
 @Path("/hello-world")
-public class HelloResource {
+public class HelloResource
+{
 
     @Inject
     private IMqttClient mqttClient;
 
     @GET
-    @Produces("text/plain")
-    public String hello(@QueryParam(value = "name") String name) {
+    @Produces("application/json")
+    @Timed(name = "helloTimings")
+    public Map<String, Object> hello(@QueryParam(value = "name") String name)
+    {
         String response = String.format("Hello, %s!", name);
         mqttClient.publishMessage(response);
-        return response;
+        return Map.of("response", response);
     }
 }
